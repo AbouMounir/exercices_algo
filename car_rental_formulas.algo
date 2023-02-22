@@ -1,0 +1,30 @@
+ALGORITHM car_rental_formulas
+VAR
+    r_1 : FLOAT := 0.7 ;
+    r_2 : FLOAT := 0.4 ;
+    r_3 : FLOAT := 0.2 ;
+    p_d : FLOAT := 100 ;
+    Ins : FLOAT := 0.3 ;
+    TVA : FLOAT := 0.18 ;
+    dist, jour, cout_dist, cout_jour : FLOAT ;
+BEGIN
+    Write("Rentrez la distance à parcourir")
+    Read(dist)
+    Write("Rentrez le nombre de jours")
+    Read(jour)
+    IF (dist < 0) THEN
+        Write("entrez un nombre positif")
+    ELSE_IF (dist =< 100) THEN
+        cout_dist := dist * r_1 + Ins + TVA ;   
+    ELSE_IF (100 < dist =< 1000) THEN
+        cout_dist := dist * r_2 + Ins + TVA ;
+    ELSE
+        cout_dist := dist * r_3 + Ins + TVA ;
+    END_IF
+    cout_jour := jour * p_d + Ins + TVA ;
+    IF (cout_dist < cout_jour) THEN
+        Write("La formule de location au kilomètre est meilleure");
+    ELSE
+        Write("La formule de location journalier est meilleure");
+    END_IF
+END

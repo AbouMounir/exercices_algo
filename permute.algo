@@ -1,0 +1,15 @@
+ALGORITHM permute
+VAR
+    x, y ,z, a : INTEGER ;
+BEGIN
+    Write(le premier nombre);
+    Read(x);
+    Write(le deuxième nombre);
+    Read(y);
+    Write(le troisieme nombre);
+    Read(z);
+    a := x ;
+    x := y ;
+    y := z ;
+    z := a ;
+END
