@@ -4,9 +4,13 @@ VAR
     day, year : INTEGER ;
     month : STRING;
 BEGIN
-    day := n % 100 ;
-    year := 2000 + (n/100) % 100 ;
-    month_int := n / 10000 ;
+    // day := n % 100 ; pas correct
+    // year := 2000 + (n/100) % 100 ;
+    // month_int := n / 10000 ;
+
+    day := n / 10000;
+    month_int = (n/100)%100 ;
+    year = n%100;
     SWITCH (month_int) DO
         case 01 : month := "Janvier" ; break;
         case 02 : month := "Février" ; break;
@@ -22,4 +26,6 @@ BEGIN
         case 12 : month := "Decembre" ; break;
         default : month := "entrez une date valide"; break;
     END_SWITCH
+
+    // afficher a la fin
 END
