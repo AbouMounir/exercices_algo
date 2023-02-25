@@ -15,13 +15,13 @@ BEGIN
     IF (dist < 0) THEN
         Write("entrez un nombre positif")
     ELSE_IF (dist =< 100) THEN
-        cout_dist := dist * r_1 + Ins + TVA ;   
+        cout_dist := (dist * r_1 + Ins * jour) *(1+TVA)  ;   
     ELSE_IF (100 < dist =< 1000) THEN
-        cout_dist := dist * r_2 + Ins + TVA ;
+        cout_dist := (dist * r_2 + Ins * jour) *(1 + TVA);
     ELSE
-        cout_dist := dist * r_3 + Ins + TVA ;
+        cout_dist := (dist * r_3 + Ins * jour) * (1 + TVA);
     END_IF
-    cout_jour := jour * p_d + Ins + TVA ;
+    cout_jour := (jour * p_d + Ins * jour) *(1+ TVA);
     IF (cout_dist < cout_jour) THEN
         Write("La formule de location au kilomètre est meilleure");
     ELSE
